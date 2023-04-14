@@ -9,21 +9,12 @@
         <header>
             <h1><a href ="/">Shankari's Blog</a></h1>
         </header>
-        <article>
-            <time>published : 14.04.2023, 8:30</time>
-            <h2><a href ="">My first post</a></h2>
-            <p>Python is a very popular general-purpose interpreted, interactive, object-oriented, and high-level programming language. Python is dynamically-typed and garbage-collected programming language. </p>
-        </article>
-        <article>
-            <time>published : 14.04.2023, 8.35</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Today, Python is very high in demand and all the major companies are looking for great Python Programmers to develop websites, software components, and applications or to work with Data Science, AI, and ML technologies.</p>
-        </article>
-        <p>
-            Hi there!
-        </p>
-        <p>
-            It works!
-        </p>
+        {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
     </body>
 </html>
